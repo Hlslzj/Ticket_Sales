@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="register" class="animate form">
+    <form action="/customer/register" autocomplete="on" method="post">
+        <h1> 注册 </h1>
+        <p>
+            <label for="usernamesignup" class="uname" data-icon="u">你的名字</label>
+            <input id="usernamesignup" name="usernamesignup" required="required" type="text"
+                   />
+        </p>
+        <p>
+            <label for="passwordsignup" class="youpasswd" data-icon="p">你的密码 </label>
+            <input id="passwordsignup" name="passwordsignup" required="required" type="password"
+                 />
+        </p>
+        <p>
+            <label for="passwordsignup_confirm" class="youpasswd" data-icon="p">确认你的密码</label>
+            <input id="passwordsignup_confirm" name="passwordsignup_confirm" required="required"
+                   type="password" />
+        </p>
+        <p>
+            <label for="emailsignup" class="youmail" data-icon="e"> 你的邮箱</label>
+            <input id="emailsignup" name="emailsignup" required="required" type="email"
+                   />
+        </p>
+        <p>
+            <label for="usernamesignup" class="uname" data-icon="u"> 你的电话</label>
+            <input id="cellphonesignup" name="cellphonesignup" required="required" type="text"
+                 />
+        </p>
+        <p class="signin button">
+            <input type="submit" value="Sign up"/>
+        </p>
+
+    </form>
+</div>
+</body>
+</html>

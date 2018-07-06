@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>管理员界面</title>
+</head>
+<h1 align="center">管理员界面</h1>
+<h2 align="center">售票记录<h2>
+<body>
+<table border="1" width="70%" align="center">
+    <thead>
+    <tr>
+        <th>列车班次</th>
+        <th>始发站</th>
+        <th>目的地</th>
+        <th>发车时间</th>
+        <th>到达时间</th>
+        <th>座位类型</th>
+        <th>座位号</th>
+        <th>价格</th>
+        <th>剩余数量</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="order : ${orderList}">
+        <td th:text="${order.trainNumber}"></td>
+        <td th:text="${order.checkin}"></td>
+        <td th:text="${order.checkout}"></td>
+        <td th:text="${order.startTime}"></td>
+        <td th:text="${order.endTime}"></td>
+        <td th:text="${order.seatType}"></td>
+        <td th:text="${order.seatNumber}"></td>
+        <td th:text="${order.price}"></td>
+        <td th:text="${order.amount}"></td>
+        </td>
+    </tr>
+    </tbody>
+</table>
+</body>
+</html>

@@ -1,0 +1,61 @@
+<html xmlns:th="http://www.thymeleaf.org">
+<meta charset="utf-8">
+<head>
+    <title>ticket列表</title>
+</head>
+<body>
+    <h3 align="center">车票列表</h3>
+    <table border="1" width="70%" align="center">
+        <thead>
+        <tr>
+            <th>列车班次</th>
+            <th>始发站</th>
+            <th>目的地</th>
+            <th>发车时间</th>
+            <th>到达时间</th>
+            <th>座位类型</th>
+            <th>座位号</th>
+            <th>价格</th>
+            <th>剩余数量</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="ticket : ${list}">
+            <td th:text="${ticket.trainNumber}"></td>
+            <td th:text="${ticket.checkin}"></td>
+            <td th:text="${ticket.checkout}"></td>
+            <td th:text="${ticket.startTime}"></td>
+            <td th:text="${ticket.endTime}"></td>
+            <td th:text="${ticket.seatType}"></td>
+            <td th:text="${ticket.seatNumber}"></td>
+            <td th:text="${ticket.price}"></td>
+            <td th:text="${ticket.amount}"></td>
+            <td><p><input type="checkbox" name="order" value="order" />订票</p>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+	<div style="text-align:center; vertical-align:middel;"><input type="text" id="ticket">
+	<button href="" th:href="@{/order/money}}">付款</button>
+	</div>
+
+    <br />
+    <th:center>
+        第<h3 th:text="${pageInfo.pageNum}"/>页/共<h3 th:text="${pageInfo.pages}"/>页 <a href="" th:href="${pageInfo.firstPage}">首页</a>
+        <h3 th:if="${pageInfo.pageNum} gt '1'">
+            <th:then>
+            <a href="" th:href="${pageInfo.prePage}">上一页</a>
+            </th:then>
+        </h3>
+
+
+        <h3 th:if ="${pageInfo.pageNum} lt ${pageInfo.lastPage}">
+            <th:then>
+            <a href="" th:herf ="${pageInfo.nextPage}">下一页</a>
+            </th:then>
+        </h3>
+        <a href="" th:herf="${pageInfo.lastPage}">尾页</a>
+
+    </th:center>
+</body>
+</html>
